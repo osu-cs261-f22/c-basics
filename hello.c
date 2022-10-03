@@ -3,6 +3,12 @@
 #include "library.h"
 #include "library.h"
 
+struct student {
+    char* name;
+    int id;
+    double gpa;
+};
+
 int main(int argc, char** argv){
     /*
      * Program goes here...
@@ -52,13 +58,17 @@ int main(int argc, char** argv){
 
     foo(16);
 
+    struct student s1, s2;
+    s1.name = "Luke Skywalker";
+    s1.id = 933111111;
+    s1.gpa = 3.75;
+
+    s2.name = "Leia Organa";
+    s2.id = 933222222;
+    s2.gpa = 4.0;
+
+    printf("\n== %s (%d) gpa: %f\n", s1.name, s1.id, s1.gpa);
+    printf("\n== %s (%d) gpa: %f\n", s2.name, s2.id, s2.gpa);
+
     return 0;
-}
-
-int add_3_ints(int a, int b, int c) {
-    return a + b + c;
-}
-
-void foo(int x) {
-    printf("== this value was passed to foo(): %d\n", x);
 }
